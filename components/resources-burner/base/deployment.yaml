@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: resources-burner
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: resources-burner
+    app.kubernetes.io/part-of: load-app-f8f123cb-9c26-43e1-9735-8b03c50b25f1
+  name: resources-burner
+spec:
+  revisionHistoryLimit: 0
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: resources-burner
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app.kubernetes.io/instance: resources-burner
+    spec:
+      containers:
+      - image: image
+        imagePullPolicy: Always
+        name: container-image
+        resources: {}
+status: {}
